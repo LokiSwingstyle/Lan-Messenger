@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LAN Messenger</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h3>Rooms</h3>
+    <button class="room-btn" data-room="general"># General</button>
+    <button class="room-btn" data-room="group:engineering"># Engineering</button>
+    <button class="room-btn" data-room="group:marketing"># Marketing</button>
+    <button id="broadcastBtn">📢 Broadcast</button>
+    <hr/>
+    <div>
+      <input id="dmUser" placeholder="DM user..." />
+      <button id="openDm">Open DM</button>
+    </div>
+    <h4>Online</h4>
+    <ul id="onlineList"></ul>
+  </aside>
+  <main>
+    <header>
+      <span id="currentRoom">general</span>
+      <span id="typing"></span>
+    </header>
+    <section id="messages"></section>
+    <div id="dropZone">Drag & Drop file here</div>
+    <footer>
+      <label for="fileInput">📎</label>
+      <input id="fileInput" type="file" hidden>
+      <input id="msgInput" placeholder="Type message..." />
+      <button id="sendBtn">Send</button>
+    </footer>
+  </main>
+</div>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
